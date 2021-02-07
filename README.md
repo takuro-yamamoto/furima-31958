@@ -37,12 +37,10 @@
 - belongs_to :user
 - has_one :order
 
-## purchases テーブル
+## orders テーブル
 
 | Column          | Type       | Options           |
 | --------------- | ---------- | ----------------- |
-| expiration_date | integer    | null: false       |
-| security_code   | integer    | null: false       |
 | postal_code     | string     | null: false       |
 | prefectures     | string     | null: false       |
 | municipality    | string     | null: false       |
