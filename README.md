@@ -41,12 +41,6 @@
 
 | Column          | Type       | Options           |
 | --------------- | ---------- | ----------------- |
-| postal_code     | string     | null: false       |
-| prefectures     | string     | null: false       |
-| municipality    | string     | null: false       |
-| address         | string     | null: false       |
-| building        | string     |                   |
-| phone_number    | string     | null: false       |
 | user            | references | foreign_key: true |
 | item            | references | foreign_key: true |
 
@@ -54,3 +48,20 @@
 
 - belongs_to :user
 - belongs_to :item
+- has_one :address
+
+## addresses テーブル
+
+| Column          | Type       | Options           |
+| --------------- | ---------- | ----------------- |
+| postal_code     | string     | null: false       |
+| prefectures     | string     | null: false       |
+| municipality    | string     | null: false       |
+| address         | string     | null: false       |
+| building        | string     |                   |
+| phone_number    | string     | null: false       |
+
+
+### Association
+
+- belongs_to :order
