@@ -1,11 +1,9 @@
 require 'rails_helper'
-
 RSpec.describe User, type: :model do
   describe '#create' do
     before do
       @user = FactoryBot.build(:user)
     end
-
     context 'ユーザー登録ができる時' do
       it '必要な情報を適切に入力すると、新規登録/ログインができる' do
         expect(@user).to be_valid
