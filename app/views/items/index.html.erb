@@ -125,7 +125,7 @@
     <h2 class='title'>ピックアップカテゴリー</h2>
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
     <ul class='item-lists'>
-      <% if @items == true %>
+      <% if @items.exists?  %>
         <% @items.each do |item|%>
           <li class='list'>
             <%= link_to "#" do %>
@@ -143,11 +143,7 @@
               </h3>
               <div class='item-price'>
                 <span><%= item.price %>円<br>
-                <% if item.delivery_fee_id == 2 %>
-                  <%= "(購入者負担)" %>
-                <% else %>
-                  <%= "(出品者負担)"%>
-                <% end %>
+                <%= @delivery.find(item.delivery_fee_id)[:name]%>
                 </span>
                 <div class='star-btn'>
                   <%= image_tag "star.png", class:"star-icon" %>
