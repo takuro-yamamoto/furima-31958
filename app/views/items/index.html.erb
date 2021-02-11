@@ -143,7 +143,7 @@
               </h3>
               <div class='item-price'>
                 <span><%= item.price %>円<br>
-                <%= @delivery.find(item.delivery_fee_id)[:name]%>
+                <%= Deliveryfee.find(item.delivery_fee_id)[:name]%>
                 </span>
                 <div class='star-btn'>
                   <%= image_tag "star.png", class:"star-icon" %>
