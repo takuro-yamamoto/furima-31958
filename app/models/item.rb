@@ -1,7 +1,11 @@
 class Item < ApplicationRecord
   belongs_to :user
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :category, :condition, :delivery_fee, :prefecture, :days_to_ship
+  belongs_to :category
+  belongs_to :condition
+  belongs_to :delivery_fee
+  belongs_to :prefecture
+  belongs_to :days_to_ship
 
   with_options presence: true do
     validates :name
